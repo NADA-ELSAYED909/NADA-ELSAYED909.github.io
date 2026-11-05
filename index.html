@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nada Ahmed | Data Analyst Portfolio</title>
+<meta name="description" content="Portfolio of Nada Ahmed, an aspiring data analyst working with SQL Server, Power BI, DAX, Power Query and Excel.">
+<meta property="og:title" content="Nada Ahmed | Data Analyst Portfolio">
+<meta property="og:description" content="Dashboards, SQL analysis and business insights from real projects.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f5f3ee">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nada Ahmed","jobTitle":"Aspiring Data Analyst","sameAs":["https://github.com/NADA-ELSAYED909","https://www.linkedin.com/in/nada-ahmed-323b12356"]}</script>
+<script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{
+  --bg:#f5f3ee;--bg2:#ecE9e1;--card:#fffefb;--ink:#14171c;--ink2:#3d434d;--mu:#6b717c;--ln:#dcd8ce;--ln2:#c9c4b8;
+  --ac:#2546d9;--ac2:#e9edff;--acI:#fff;--ok:#18865a;--warn:#a86a00;--warnBg:#fff4dc;
+  --fd:'Instrument Serif',Georgia,serif;--fb:'Geist',system-ui,sans-serif;--fm:'Geist Mono',ui-monospace,monospace;
+  --r:14px;--tr:.25s cubic-bezier(.4,0,.2,1);--sh:0 1px 2px rgba(20,23,28,.04),0 8px 24px rgba(20,23,28,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#0f1115;--bg2:#15181e;--card:#191c23;--ink:#eef0f3;--ink2:#c3c8d1;--mu:#8a909c;--ln:#262a33;--ln2:#343945;
+  --ac:#7d93ff;--ac2:rgba(125,147,255,.12);--acI:#0f1115;--ok:#4cc38a;--warn:#f0b54a;--warnBg:rgba(240,181,74,.1);--sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}}
+:root[data-theme=dark]{
+  --bg:#0f1115;--bg2:#15181e;--card:#191c23;--ink:#eef0f3;--ink2:#c3c8d1;--mu:#8a909c;--ln:#262a33;--ln2:#343945;
+  --ac:#7d93ff;--ac2:rgba(125,147,255,.12);--acI:#0f1115;--ok:#4cc38a;--warn:#f0b54a;--warnBg:rgba(240,181,74,.1);--sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font:16px/1.65 var(--fb);background:var(--bg);color:var(--ink2);overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background var(--tr),color var(--tr)}
+::selection{background:var(--ac);color:var(--acI)}
+a{color:var(--ac);text-decoration:none}
+img{max-width:100%}
+.w{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:104px 0;position:relative}
+.band{background:var(--bg2);border-block:1px solid var(--ln)}
+h1,h2,h3{color:var(--ink);font-weight:400;line-height:1.08}
+h2{font:400 clamp(2.2rem,4.6vw,3.4rem)/1.05 var(--fd);letter-spacing:-.01em}
+h2 em,h1 em{font-style:italic;color:var(--ac)}
+.eye{display:flex;align-items:center;gap:10px;font:500 .72rem var(--fm);letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-bottom:18px}
+.eye b{color:var(--ac);font-weight:500}
+.eye::after{content:'';flex:0 0 40px;height:1px;background:var(--ln2)}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.sh p{max-width:420px;color:var(--mu)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color var(--tr)}
+header.sc{border-color:var(--ln)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
+.lg{font:500 .95rem var(--fm);color:var(--ink);letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.lg i{width:26px;height:26px;border-radius:7px;background:var(--ink);display:grid;place-items:center}
+.lg i svg{width:14px;height:14px}
+nav{display:flex;gap:4px;align-items:center}
+nav a{font:500 .82rem var(--fb);color:var(--mu);padding:7px 12px;border-radius:8px;transition:var(--tr)}
+nav a:hover,nav a.on{color:var(--ink);background:var(--card)}
+.hr{display:flex;gap:8px;align-items:center}
+.ic{width:38px;height:38px;border-radius:10px;border:1px solid var(--ln);background:var(--card);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:var(--tr)}
+.ic:hover{border-color:var(--ln2)}
+.ic svg{width:17px;height:17px}
+.ic .mo{display:none}:root[data-theme=dark] .ic .su{display:none}:root[data-theme=dark] .ic .mo{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ic .su{display:none}:root:not([data-theme=light]) .ic .mo{display:block}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:10px;font:500 .9rem var(--fb);border:1px solid transparent;cursor:pointer;transition:var(--tr);white-space:nowrap}
+.btn svg{width:16px;height:16px}
+.b1{background:var(--ink);color:var(--bg)}.b1:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+.b2{border-color:var(--ln2);color:var(--ink);background:var(--card)}.b2:hover{border-color:var(--ink);transform:translateY(-2px)}
+.sm{padding:8px 14px;font-size:.82rem}
+.bs{display:flex;gap:10px;flex-wrap:wrap}
+
+/* hero */
+.hero{padding:150px 0 70px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 70% 60% at 70% 30%,#000 10%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 70% 30%,#000 10%,transparent 75%);opacity:.6;pointer-events:none}
+.hg{position:relative;display:grid;grid-template-columns:1.25fr .85fr;gap:64px;align-items:center}
+.st8{display:inline-flex;align-items:center;gap:9px;font:500 .78rem var(--fm);color:var(--ink2);background:var(--card);border:1px solid var(--ln);padding:6px 14px 6px 10px;border-radius:40px;margin-bottom:28px}
+.st8 i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 20%,transparent);animation:pl 2.2s infinite}
+@keyframes pl{50%{box-shadow:0 0 0 7px color-mix(in srgb,var(--ok) 0%,transparent)}}
+.hero h1{font:400 clamp(3rem,7.2vw,5.6rem)/.98 var(--fd);letter-spacing:-.02em;margin-bottom:26px}
+.hero h1 span{display:block}
+.lead{font-size:1.12rem;color:var(--mu);max-width:520px;margin-bottom:34px}
+.lead b{color:var(--ink);font-weight:500}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border:1px solid var(--ln);border-radius:var(--r);background:var(--card);overflow:hidden}
+.kp div{padding:18px 20px;border-left:1px solid var(--ln)}.kp div:first-child{border:0}
+.kp b{display:block;font:400 2.4rem/1 var(--fd);color:var(--ink)}
+.kp span{font:500 .7rem var(--fm);letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+
+.pc{position:relative;justify-self:end;width:100%;max-width:360px}
+.pf{aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:var(--bg2);border:1px solid var(--ln);position:relative;box-shadow:var(--sh)}
+.pf img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:top}
+.pf .ini{position:absolute;inset:0;display:grid;place-items:center;font:400 6rem var(--fd);color:var(--ln2)}
+.dc{position:absolute;z-index:3;left:-36px;bottom:-26px;width:250px;background:var(--card);border:1px solid var(--ln);border-radius:14px;box-shadow:var(--sh);padding:14px 16px;font:400 .76rem/1.9 var(--fm)}
+.dc .hd{display:flex;justify-content:space-between;color:var(--mu);border-bottom:1px solid var(--ln);padding-bottom:6px;margin-bottom:6px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.dc div{display:flex;justify-content:space-between;gap:10px}
+.dc em{font-style:normal;color:var(--mu)}.dc span{color:var(--ink);text-align:right}
+.dc .g{color:var(--ok)}
+
+/* ticker */
+.tk{border-block:1px solid var(--ln);background:var(--card);overflow:hidden;position:relative}
+.tk::before,.tk::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.tk::before{left:0;background:linear-gradient(90deg,var(--card),transparent)}.tk::after{right:0;background:linear-gradient(-90deg,var(--card),transparent)}
+.tt{display:flex;width:max-content;animation:mq 70s linear infinite}
+.tk:hover .tt{animation-play-state:paused}
+.tt p{display:flex;align-items:center;gap:12px;padding:16px 28px;font-size:.9rem;color:var(--ink2);white-space:nowrap;border-right:1px solid var(--ln)}
+.tt p b{font:500 .68rem var(--fm);letter-spacing:.1em;text-transform:uppercase;color:var(--ac);background:var(--ac2);padding:3px 8px;border-radius:5px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* about / process */
+.ab{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start}
+.ab p{color:var(--mu);margin-bottom:16px;font-size:1.02rem}.ab p b{color:var(--ink);font-weight:500}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border:1px solid var(--ln);border-radius:var(--r);background:var(--card);overflow:hidden}
+.steps li{list-style:none;padding:26px 22px 28px;border-left:1px solid var(--ln);position:relative}
+.steps li:first-child{border:0}
+.steps small{font:500 .72rem var(--fm);color:var(--ac)}
+.steps h3{font:500 1.05rem var(--fb);margin:14px 0 8px}
+.steps p{font-size:.9rem;color:var(--mu);line-height:1.55}
+.steps svg{width:22px;height:22px;color:var(--ink);position:absolute;top:24px;right:22px;opacity:.55}
+
+/* featured */
+.ft{display:grid;grid-template-columns:1.35fr 1fr;border:1px solid var(--ln);border-radius:20px;background:var(--card);overflow:hidden;margin-bottom:28px;box-shadow:var(--sh);text-align:left;width:100%;font:inherit;color:inherit;cursor:pointer;padding:0;transition:var(--tr)}
+.ft:hover{transform:translateY(-3px);border-color:var(--ln2)}
+.ft .im{background:var(--bg2);border-right:1px solid var(--ln);padding:22px;display:flex;align-items:center}
+.ft .im img{width:100%;border-radius:10px;border:1px solid var(--ln);box-shadow:var(--sh);display:block}
+.ft .bd{padding:38px 36px;display:flex;flex-direction:column;gap:16px}
+.ft h3{font:400 2.3rem/1.05 var(--fd)}
+.ft p{color:var(--mu)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0}
+.cmp>div{border:1px solid var(--ln);border-radius:10px;padding:12px 14px}
+.cmp b{display:block;font:400 2rem/1 var(--fd);color:var(--ink)}
+.cmp small{font:500 .68rem/1.4 var(--fm);color:var(--mu);letter-spacing:.04em;text-transform:uppercase;display:block;margin-top:6px}
+.cmp .bar{height:6px;border-radius:3px;background:var(--bg2);margin-top:10px;overflow:hidden}
+.cmp .bar i{display:block;height:100%;background:var(--ink2)}
+.cmp .hi b{color:var(--ac)}.cmp .hi .bar i{background:var(--ac)}
+.lbl{font:500 .7rem var(--fm);letter-spacing:.12em;text-transform:uppercase;color:var(--ac)}
+.more{font:500 .88rem var(--fb);color:var(--ink);display:inline-flex;gap:8px;align-items:center;margin-top:auto}
+.more svg{width:16px;transition:var(--tr)}.ft:hover .more svg,.c:hover .more svg{transform:translateX(4px)}
+
+/* filters */
+.fb{display:flex;gap:4px;padding:4px;border:1px solid var(--ln);border-radius:12px;background:var(--card)}
+.fb button{font:500 .82rem var(--fb);padding:7px 14px;border-radius:8px;border:0;background:none;cursor:pointer;color:var(--mu);transition:var(--tr)}
+.fb button:hover{color:var(--ink)}
+.fb button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.fb sup{font:500 .62rem var(--fm);opacity:.6;margin-left:3px}
+
+/* grid cards */
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+.c{background:var(--card);border:1px solid var(--ln);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-align:left;cursor:pointer;font:inherit;color:inherit;padding:0;transition:var(--tr);animation:fi .4s both}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}}
+.c:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:var(--ln2)}
+.c .im{aspect-ratio:16/9;background:var(--bg2);overflow:hidden;border-bottom:1px solid var(--ln);position:relative}
+.c .im img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:.5s}
+.c:hover .im img{transform:scale(1.03)}
+.sq{height:100%;padding:22px 24px;font:400 .8rem/1.75 var(--fm);color:var(--ink2);background:var(--ink);color:#c9cfd9;overflow:hidden}
+.sq .k{color:#8ea2ff}.sq .s{color:#f0b54a}.sq .cm{color:#6e7682}
+.c .bd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.c h3{font:500 1.08rem var(--fb)}
+.c p{font-size:.9rem;color:var(--mu)}
+.met{display:flex;align-items:baseline;gap:10px;padding:12px 0;border-block:1px dashed var(--ln);margin:4px 0}
+.met b{font:400 1.9rem/1 var(--fd);color:var(--ink);white-space:nowrap}
+.met span{font-size:.8rem;color:var(--mu);line-height:1.35}
+.tg{display:flex;flex-wrap:wrap;gap:6px}
+.tg i{font:500 .68rem var(--fm);font-style:normal;padding:3px 9px;border-radius:6px;color:var(--ink2);background:var(--bg2);border:1px solid var(--ln)}
+.fl{position:absolute;top:12px;left:12px;font:500 .66rem var(--fm);letter-spacing:.06em;text-transform:uppercase;background:var(--warnBg);color:var(--warn);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);padding:4px 9px;border-radius:6px;backdrop-filter:blur(6px)}
+
+/* skills */
+.sk{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.us{border:1px solid var(--ln);border-radius:var(--r);background:var(--card);padding:26px 26px 18px}
+.us h3{font:500 .72rem var(--fm);letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin-bottom:18px;display:flex;justify-content:space-between}
+.ur{display:grid;grid-template-columns:120px 1fr 26px;gap:14px;align-items:center;padding:7px 0;font-size:.9rem;color:var(--ink)}
+.ur .t{height:10px;border-radius:5px;background:var(--bg2);overflow:hidden}
+.ur .t i{display:block;height:100%;width:0;border-radius:5px;background:var(--ac);transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.ur b{font:500 .82rem var(--fm);text-align:right;color:var(--mu)}
+.us .ft2{font-size:.78rem;color:var(--mu);border-top:1px solid var(--ln);margin-top:14px;padding-top:12px}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sg div{border:1px solid var(--ln);border-radius:12px;padding:18px;background:var(--card)}
+.sg h4{font:500 .7rem var(--fm);letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin-bottom:10px}
+.sg li{list-style:none;font-size:.9rem;color:var(--ink2);padding:2px 0}
+
+/* certificates */
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.ce{display:flex;gap:16px;background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:12px;align-items:center;transition:var(--tr)}
+.ce:hover{border-color:var(--ln2);box-shadow:var(--sh)}
+.ce button{flex:0 0 104px;aspect-ratio:4/3;border:1px solid var(--ln);border-radius:8px;padding:0;overflow:hidden;cursor:zoom-in;background:#fff}
+.ce img{width:100%;height:100%;object-fit:cover;display:block}
+.ce h3{font:500 .95rem/1.35 var(--fb)}
+.ce small{display:block;color:var(--mu);font-size:.8rem;margin-top:3px}
+.ce .d{font:500 .7rem var(--fm);color:var(--mu);letter-spacing:.04em}
+.ce a{font:500 .76rem var(--fb);display:inline-flex;align-items:center;gap:5px;margin-top:6px}
+.ce a svg{width:13px;height:13px}
+
+/* contact */
+.ct{text-align:center}
+.ct .eye{justify-content:center}.ct .eye::after{display:none}
+.ct h2{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:18px}
+.ct p{color:var(--mu);max-width:500px;margin:0 auto 34px}
+.ct .bs{justify-content:center}
+.ml{font:400 clamp(1.3rem,3.2vw,2rem) var(--fd);color:var(--ink);border-bottom:1px solid var(--ln2);padding-bottom:4px;display:inline-block;margin-bottom:34px;transition:var(--tr);word-break:break-all}
+.ml:hover{color:var(--ac);border-color:var(--ac)}
+footer{border-top:1px solid var(--ln);padding:26px 0;font:400 .78rem var(--fm);color:var(--mu)}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* dialogs */
+dialog{border:1px solid var(--ln);border-radius:20px;max-width:min(980px,94vw);width:100%;max-height:92vh;padding:0;background:var(--card);color:var(--ink2);margin:auto;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog[open]{animation:dz .25s both}@keyframes dz{from{opacity:0;transform:translateY(14px) scale(.98)}}
+dialog::backdrop{background:rgba(10,12,16,.55);backdrop-filter:blur(4px)}
+.x{position:sticky;top:12px;float:right;margin:12px 12px 0 0;width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;z-index:3}
+.x:hover{border-color:var(--ink)}
+.md{padding:34px 38px 38px}
+.md h3{font:400 2.4rem/1.05 var(--fd);margin:6px 0 14px}
+.gal{position:relative;background:var(--bg2);border:1px solid var(--ln);border-radius:12px;overflow:hidden;margin:22px 0 10px;aspect-ratio:16/9}
+.gal img{width:100%;height:100%;object-fit:contain}
+.ar{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid var(--ln);background:var(--card);color:var(--ink);cursor:pointer;font-size:18px;box-shadow:var(--sh)}
+.ar.p{left:12px}.ar.n{right:12px}
+.th{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.th button{width:76px;height:44px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;cursor:pointer;opacity:.5;background:none;transition:var(--tr)}
+.th button[aria-current=true]{border-color:var(--ac);opacity:1}
+.th img{width:100%;height:100%;object-fit:cover}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:22px}
+.md h4{font:500 .72rem var(--fm);letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin:0 0 10px}
+.md .blk{margin-bottom:22px}
+.md ul{list-style:none;counter-reset:n}
+.md li{font-size:.93rem;color:var(--ink2);padding:7px 0 7px 30px;position:relative;border-bottom:1px solid var(--ln)}
+.md li:last-child{border:0}
+.md li::before{counter-increment:n;content:counter(n,decimal-leading-zero);position:absolute;left:0;top:9px;font:500 .7rem var(--fm);color:var(--mu)}
+.md p{font-size:.95rem}
+.rc{background:var(--ac2);border-radius:10px;padding:14px 16px;color:var(--ink)}
+.nt{margin-top:4px;padding:14px 16px;border-radius:10px;background:var(--warnBg);color:var(--ink2);font-size:.9rem;display:flex;gap:10px}
+.nt svg{flex:0 0 18px;width:18px;color:var(--warn);margin-top:2px}
+.lbx{padding:14px}.lbx img{width:100%;display:block;border-radius:10px}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+@media(max-width:960px){
+  .hg,.ab,.sk{grid-template-columns:1fr;gap:48px}
+  .pc{justify-self:start;max-width:300px;margin-left:36px}
+  .steps{grid-template-columns:1fr 1fr}.steps li:nth-child(3){border-left:0}.steps li:nth-child(n+3){border-top:1px solid var(--ln)}
+  .ft{grid-template-columns:1fr}.ft .im{border-right:0;border-bottom:1px solid var(--ln)}
+  nav{display:none}
+}
+@media(max-width:600px){
+  section{padding:72px 0}.w{padding:0 16px}
+  .hero{padding:118px 0 56px}
+  .pc{margin-left:0;max-width:100%;display:grid;grid-template-columns:130px 1fr;gap:14px;align-items:center}.pf{aspect-ratio:4/5}.dc{position:static;width:auto}
+  .kp b{font-size:1.9rem}.kp div{padding:14px}
+  .steps{grid-template-columns:1fr}.steps li{border-left:0!important;border-top:1px solid var(--ln)}.steps li:first-child{border-top:0}
+  .pg,.cg{grid-template-columns:1fr}
+  .ft .bd{padding:26px 22px}.ft h3{font-size:1.9rem}
+  .mg{grid-template-columns:1fr;gap:0}.md{padding:26px 20px 28px}.md h3{font-size:1.9rem}
+  .sg{grid-template-columns:1fr}.ur{grid-template-columns:96px 1fr 22px}
+  .hr .cv{display:none}
+  .fb{overflow-x:auto;max-width:100%}
+}
+</style>
+</head>
+<body>
+<header id="hd"><div class="w">
+  <a href="#top" class="lg"><i><svg viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="3" height="6" rx="1" fill="var(--bg)"/><rect x="5.5" y="4" width="3" height="9" rx="1" fill="var(--bg)"/><rect x="10" y="1" width="3" height="12" rx="1" fill="var(--bg)"/></svg></i>nada.ahmed</a>
+  <nav aria-label="Main"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></nav>
+  <div class="hr">
+    <button class="ic" id="tt" aria-label="Toggle dark mode"><svg class="su" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="mo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="btn b1 sm cv" href="assets/Nada_CV.pdf" download>Download CV</a>
+  </div>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="w hg">
+  <div>
+    <span class="st8"><i></i>Open to junior data analyst roles</span>
+    <h1><span>I turn raw data</span><span>into <em>clear business</em></span><span><em>decisions.</em></span></h1>
+    <p class="lead">I work with <b>SQL Server, Power BI, DAX, Power Query and Excel</b>, and I start every project with the business question rather than the chart.</p>
+    <div class="bs"><a class="btn b1" href="#projects">View projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn b2" href="#contact">Contact me</a></div>
+    <div class="kp" id="kp"></div>
+  </div>
+  <div class="pc">
+    <div class="pf"><span class="ini" aria-hidden="true">NA</span><img src="assets/img/profile.jpg" alt="Nada Ahmed" onerror="this.remove()"></div>
+    <div class="dc" aria-label="Profile summary">
+      <div class="hd"><span>profile</span><span>1 row</span></div>
+      <div><em>name</em><span>Nada Ahmed</span></div>
+      <div><em>study</em><span>BIS · Benha Univ.</span></div>
+      <div><em>focus</em><span>SQL · Power BI</span></div>
+      <div><em>status</em><span class="g">● available</span></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="tk" aria-label="Selected findings from my projects"><div class="tt" id="tk"></div></div>
+
+<section id="about"><div class="w">
+  <div class="ab rv">
+    <div><p class="eye"><b>01</b> About</p><h2>Business questions first, <em>tools second.</em></h2></div>
+    <div>
+      <p>I'm a <b>Business Information Systems student at Benha University</b>, building practical data analysis skills through hands-on projects. My process is the same each time: understand the question, check that the data can be trusted, then model it and design a dashboard that someone can act on.</p>
+      <p>I also try to be <b>honest about what the data can't say</b>. Some of my projects use training datasets with unrealistic patterns, and I flagged that in the write-ups instead of presenting the results as real findings.</p>
+      <p>I'm looking for a junior data analyst role or small freelance projects.</p>
+    </div>
+  </div>
+  <ol class="steps rv">
+    <li><small>STEP 01</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17h.01"/></svg><h3>Frame the question</h3><p>Pin down the decision the analysis has to support before touching the data.</p></li>
+    <li><small>STEP 02</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><h3>Validate the data</h3><p>Clean, de-duplicate and reconcile totals across tools so the numbers can be trusted.</p></li>
+    <li><small>STEP 03</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><path d="M10 6.5h4M17.5 10v4"/></svg><h3>Model it</h3><p>Star schemas, clear relationships and DAX measures with one agreed definition each.</p></li>
+    <li><small>STEP 04</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><h3>Communicate</h3><p>Dashboards and write-ups that lead with the finding, the action, and the limits.</p></li>
+  </ol>
+</div></section>
+
+<section id="projects" class="band"><div class="w">
+  <div class="sh"><div><p class="eye"><b>02</b> Projects</p><h2>Selected <em>work</em></h2></div><div class="fb" role="group" aria-label="Filter projects" id="fb"></div></div>
+  <div id="fx"></div>
+  <div class="pg" id="pg"></div>
+</div></section>
+
+<section id="skills"><div class="w sk">
+  <div class="rv"><p class="eye"><b>03</b> Skills</p><h2>What I <em>actually</em> use</h2>
+    <p style="color:var(--mu);margin:20px 0 28px;max-width:440px">Instead of self-rated skill bars, this chart counts how many of my projects each tool appears in. It is calculated from the project list on this page.</p>
+    <div class="sg">
+      <div><h4>Data analysis</h4><ul><li>Microsoft Excel</li><li>SQL</li><li>Microsoft SQL Server</li></ul></div>
+      <div><h4>Business intelligence</h4><ul><li>Power BI</li><li>DAX</li><li>Dashboard design</li></ul></div>
+      <div><h4>Data preparation</h4><ul><li>Power Query</li><li>Data cleaning</li><li>Data transformation</li></ul></div>
+      <div><h4>Analytical methods</h4><ul><li>Data modeling</li><li>Exploratory analysis</li><li>Visualization</li><li>Communicating insights</li></ul></div>
+    </div>
+  </div>
+  <div class="us rv" id="us"><h3><span>Tool</span><span>Projects using it</span></h3><div id="ub"></div><p class="ft2" id="un"></p></div>
+</div></section>
+
+<section id="certificates" class="band"><div class="w">
+  <div class="sh"><div><p class="eye"><b>04</b> Certificates</p><h2>Training &amp; <em>certifications</em></h2></div><p>Click a certificate to view it. Where an issuer offers verification, the link is included.</p></div>
+  <div class="cg" id="cg"></div>
+</div></section>
+
+<section id="contact" class="ct"><div class="w rv">
+  <p class="eye"><b>05</b> Contact</p>
+  <h2>Let's talk about <em>your data.</em></h2>
+  <p>Open to junior data analyst roles and small freelance projects. The best way to reach me is by email or LinkedIn.</p>
+  <a class="ml" href="mailto:nadaahmed41207@gmail.com">nadaahmed41207@gmail.com</a>
+  <div class="bs">
+    <a class="btn b1" href="https://www.linkedin.com/in/nada-ahmed-323b12356" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn b2" href="https://github.com/NADA-ELSAYED909" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn b2" href="assets/Nada_CV.pdf" download>Download CV</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="w"><span>© 2026 Nada Ahmed</span><span>Built by hand · HTML, CSS, JS</span></div></footer>
+<dialog id="pd" aria-label="Project details"></dialog>
+<dialog id="lb" aria-label="Certificate"></dialog>
+
+<script>
+const GH='https://github.com/NADA-ELSAYED909/',I='assets/img/';
+const P=[
+{id:'pharma',t:'PharmaPulse Analytics',k:'pbi',s:'Where a pharmacy chain loses money, and which discounts are worth it.',fl:1,n:4,r:'PharmaPulse-Analytics',tools:['Python','Power Query','SQL Server','Power BI','DAX'],
+m:'21.3%',ml:'margin when discounts exceed 15%, vs 40.9% at 0–5%',
+p:'A pharmacy chain with 12 stores across 5 regions needed to know where profit comes from, which sales lose money, which discounts pay off, and where inventory is at risk.',
+a:['Cleaned raw files with Python and Power Query: merged 3 sales files with different columns and two date formats, removed 50 duplicate rows and 42 duplicate customers.','Explored and validated the data in SQL Server with 22 queries (joins, CTEs, window functions), and checked that totals matched across Python, SQL and Power BI.','Built a star schema with DAX KPIs and a 4-page dashboard: overview, loss sales, inventory, discounts.'],
+f:['Discounts above 15% cut the margin to 21.3%, compared with 40.9% for discounts of 0 to 5%.','Vitamins & Supplements has a 22.1% loss rate against 2 to 6% elsewhere: 112 of its 543 products have a cost price above the selling price.','North is the second largest region by revenue (0.72M) but has the lowest margin (27.4%).','Promo-code sales earn a 31.6% margin versus 35.4% for regular sales; SAVE10 is the weakest code at 28.0%.'],
+rec:'Cap discounts near 15% with approval above it, and fix prices that sit below cost.'},
+{id:'mkt',t:'Marketing Analytics Dashboard',k:'pbi',s:'Is marketing spend going to the channels and campaigns that perform?',n:5,r:'Marketing-Analytics-Dashbard',tools:['Power BI','DAX','Power Query','Excel'],
+m:'73.1%',ml:'of revenue comes from returning customers (26.9% of customers)',
+p:'Revenue and conversions fell year over year, and it was unclear whether spend, channel efficiency or lead conversion was to blame.',
+a:['Built a star-schema model with custom DAX measures for ROAS, CAC, CLV, conversion rate and funnel metrics.','Five report pages: overview, channels, trends and funnel, campaign details, customers.'],
+f:['Revenue fell 22.7% year over year while spend fell 12.3%, so the return per dollar is shrinking.','Google Ads has the best ROAS (7.96) and lowest CAC (64.06) but the smallest share of budget.','Only about 1.45% of clicks become leads, so the funnel breaks after the click, not before it.','Returning customers are 26.9% of customers but generate 73.1% of revenue.'],
+rec:'Shift budget toward proven high-ROAS channels and campaigns.'},
+{id:'global',t:'Global Development Dashboard',k:'pbi',s:'Comparing 237 countries to decide where support should be prioritized.',n:3,r:'global-development-dashboard-power-bi',tools:['Power BI','DAX'],
+m:'9×',ml:"Africa's infant mortality compared with Europe's",
+p:'A development organization needs to decide which countries and regions to prioritize for health and economic support.',
+a:['Compared 237 countries and territories across 45 indicators (single-year snapshot).','Five pages with DAX measures, slicers and a single-country profile view.'],
+f:['Total GDP does not track living standards: the US ranks first by GDP at 77.7 years of life expectancy, while France and Italy reach 79.6 and 79.7.','Africa\'s infant mortality is about 9 times Europe\'s (76 vs 8 per 1,000).','North America\'s trade deficit (-0.65T) is almost offset by all other regions combined (+0.66T).'],
+note:'Single-year data, and the relationships shown are correlations, not proof of cause.'},
+{id:'sql',t:'SQL Sales Data Analysis',k:'sql',s:'30 business questions answered in SQL Server, from aggregates to window functions.',sq:1,r:'SQL-Sales-Data-Analysis-Project',tools:['SQL Server','SSMS'],
+m:'30',ml:'business questions answered with T-SQL',
+p:'Answer 30 business questions on the Sample Superstore retail dataset, covering customers, products, categories, locations and sales performance.',
+a:['Progressed from basic aggregations to subqueries, CTEs, window functions, ranking functions (ROW_NUMBER, RANK, DENSE_RANK), CASE expressions and running totals.','All queries and the dataset are in the repository.']},
+{id:'xl',t:'Excel Sales Dashboard',k:'xl',s:'An interactive dashboard of sales and profit by region, category and segment.',n:1,r:'excel-sales-dashboard',tools:['Excel','Power Query','Power Pivot','DAX'],
+p:'Understand sales and profit performance across regions, categories, segments and time.',
+a:['Cleaned the data in Power Query and built a data model with relationships.','Created DAX measures in Power Pivot, then PivotTables and PivotCharts.','Added slicers and KPI cards (total sales, total profit, top region) for an interactive dashboard.']},
+{id:'hr',t:'HR Dashboard',k:'pbi',s:'Headcount, turnover, pay and data gaps from a raw three-sheet HR file.',n:1,r:'hr-dashboard-power-bi',tools:['Power Query','Power BI'],
+m:'50%',ml:'termination rate in Sales, vs 23% in the department with the most terminations',
+p:'A raw HR dataset split across three sheets needed cleaning and modeling to answer headcount, turnover, pay and data-quality questions (DEPI program).',
+a:['Cleaned in Power Query (data types, trimming, casing) and kept meaningful nulls instead of deleting them.','Kept three related tables, with a separate department-to-manager table to avoid redundancy.'],
+f:['Raw counts mislead: Development has the most terminations (11) but a 23% rate, while Sales (50%) and Strategy (44%) are higher.','Marketing has the top average salary, but it rests on only 4 employees, so it is a directional signal only.','About 20% of records have an Unknown availability status, and 12 of those 18 are in Development: a data-collection gap.']},
+{id:'sales',td:1,t:'Sales & Profit Dashboard',k:'pbi',s:'A star-schema model for sales, profit and customer metrics.',n:1,r:'sales-profit-dashboard-power-bi-',tools:['Power Query','Power BI'],
+m:'40%',ml:'overall margin, checked against gaps in the Cost column first',
+p:'Model a retail sales dataset and report sales, profit and customer metrics (DEPI program).',
+a:['Built a star schema: one fact table and four dimensions (products, customers, salespersons, date).'],
+f:['The overall margin is 40%, above a typical 20 to 30% retail range. I checked that the Cost column had no gaps before trusting it.'],
+note:'This looks like a training dataset (payment methods are almost evenly split), so it demonstrates method rather than real-world findings.'},
+{id:'mpex',td:1,t:'MPEX Sales Performance Dashboard',k:'pbi',s:'Revenue, orders and discount rate across channels, regions and years.',n:1,r:'MPEX-Sales-Performance-Dashboard-power-bi',tools:['Power Query','Power BI'],
+m:'20M→55M',ml:'revenue growth from 2022 to 2024',
+p:'Clean sales data, build a relational model and track revenue, orders, units sold and discount rate (DEPI program).',
+a:['Built a star schema: one fact table and six dimensions (region, product, channel, segment, sales rep, calendar).'],
+f:['Revenue grew from about 20M (2022) to about 55M (2024), and the 2023 to 2024 jump was larger than 2022 to 2023.'],
+note:'Several regions show identical revenue values, which points to a training dataset. This is flagged in the project.'}];
+const C=[
+['Digitera Program, Business Track','iCareer, Plan International Egypt','Sep 2026','digitera'],
+['Data Fundamentals','IBM SkillsBuild','Aug 2026','ibm','https://www.credly.com/badges/2e15e6d4-405d-434e-9bd9-bf1e96621e40/public_url'],
+['Associate Data Analyst in SQL','DataCamp','Mar 2026','datacamp','https://www.datacamp.com/completed/statement-of-accomplishment/track/d30f968a8f2c2e69f3d86f4e9e7dbef85b0bfe3d'],
+['Advanced SQL','365 Data Science','Mar 2026','365','https://learn.365datascience.com/c/ba32208006'],
+['Data Analytics (120 hours)','ITIDA and NTI','Jul to Aug 2025','itida'],
+['Data Science & AI Bootcamp (36 hours)','Google Developer Groups, Benha University','Jan 2025','gdg']];
+
+const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const img=(p,i)=>`${I}p/${p.id}-${i}.webp`;
+const tg=a=>`<div class="tg">${a.map(x=>`<i>${x}</i>`).join('')}</div>`;
+const li=a=>`<ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+const ARW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const WARN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5h.01"/></svg>';
+
+/* theme */
+$('#tt').onclick=()=>{const r=document.documentElement,dk=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches,n=dk?'light':'dark';r.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}};
+addEventListener('scroll',()=>$('#hd').classList.toggle('sc',scrollY>10),{passive:true});
+
+/* KPIs: counted from the data, not typed */
+const tools=new Set(P.flatMap(p=>p.tools));
+$('#kp').innerHTML=[[P.length,'Projects'],[C.length,'Certificates'],[tools.size,'Tools used']].map(([v,l])=>`<div><b>${v}</b><span>${l}</span></div>`).join('');
+
+/* ticker: first finding from each project that has findings */
+const tk=P.filter(p=>p.f).map(p=>`<p><b>${p.t.split(' ')[0]}</b>${esc(p.f[0].split(/[.:](\s|$)/)[0])}</p>`).join('');
+$('#tk').innerHTML=tk+tk.replace(/<p>/g,'<p aria-hidden="true">');
+
+/* featured */
+const fp=P.find(p=>p.fl);
+$('#fx').innerHTML=`<button class="ft rv" data-id="${fp.id}"><div class="im"><img src="${img(fp,1)}" alt="${fp.t} dashboard preview"></div><div class="bd"><span class="lbl">Featured case study</span><h3>${fp.t}</h3><p>${fp.s}</p>
+<div class="cmp"><div><b>40.9%</b><small>Margin · discount 0–5%</small><div class="bar"><i style="width:${40.9/45*100}%"></i></div></div><div class="hi"><b>21.3%</b><small>Margin · discount &gt;15%</small><div class="bar"><i style="width:${21.3/45*100}%"></i></div></div></div>
+<p style="font-size:.9rem"><b style="color:var(--ink);font-weight:500">Recommendation:</b> ${fp.rec}</p>${tg(fp.tools)}<span class="more">Read the case study ${ARW}</span></div></button>`;
+
+/* filters */
+const F=[['all','All'],['pbi','Power BI'],['sql','SQL'],['xl','Excel']];
+const rest=P.filter(p=>!p.fl);
+$('#fb').innerHTML=F.map(([k,l],i)=>`<button aria-pressed="${!i}" data-f="${k}">${l}<sup>${k=='all'?P.length:P.filter(p=>p.k==k).length}</sup></button>`).join('');
+const SQ=`<div class="sq"><span class="cm">-- e.g. ranking inside each group</span><br><span class="k">WITH</span> ranked <span class="k">AS</span> (<br>&nbsp;&nbsp;<span class="k">SELECT</span> region, customer,<br>&nbsp;&nbsp;<span class="k">DENSE_RANK</span>() <span class="k">OVER</span> (<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">PARTITION BY</span> region<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">ORDER BY SUM</span>(sales) <span class="k">DESC</span>) rk<br>&nbsp;&nbsp;<span class="k">FROM</span> orders <span class="k">GROUP BY</span> region, customer)<br><span class="k">SELECT</span> * <span class="k">FROM</span> ranked <span class="k">WHERE</span> rk &lt;= <span class="s">3</span>;</div>`;
+function cards(f){
+  const list=f=='all'?rest:P.filter(p=>p.k==f);
+  $('#fx').style.display=f=='all'||f=='pbi'?'':'none';
+  const show=f=='pbi'?list.filter(p=>!p.fl):list;
+  $('#pg').innerHTML=show.map((p,i)=>`<button class="c" style="animation-delay:${i*50}ms" data-id="${p.id}"><div class="im">${p.sq?SQ:`<img src="${img(p,1)}" alt="${p.t} dashboard preview" loading="lazy">`}${p.td?'<span class="fl">Training data · flagged</span>':''}</div><div class="bd"><h3>${p.t}</h3><p>${p.s}</p>${p.m?`<div class="met"><b>${p.m}</b><span>${p.ml}</span></div>`:''}${tg(p.tools)}<span class="more" style="margin-top:6px">Details ${ARW}</span></div></button>`).join('');
+}
+$('#fb').onclick=e=>{const b=e.target.closest('button');if(!b)return;$$('#fb button').forEach(x=>x.setAttribute('aria-pressed',x==b));cards(b.dataset.f)};
+
+/* project modal */
+function openP(id){
+  const p=P.find(x=>x.id==id),d=$('#pd');let cur=1;
+  d.innerHTML=`<button class="x" aria-label="Close">×</button><div class="md"><span class="lbl">${{pbi:'Power BI',sql:'SQL',xl:'Excel'}[p.k]} project</span><h3>${p.t}</h3>${tg(p.tools)}
+  ${p.n?`<div class="gal"><img id="gi" src="${img(p,1)}" alt="${p.t} screenshot 1">${p.n>1?'<button class="ar p" aria-label="Previous screenshot">‹</button><button class="ar n" aria-label="Next screenshot">›</button>':''}</div>${p.n>1?`<div class="th">${Array.from({length:p.n},(_,i)=>`<button data-i="${i+1}" aria-label="Screenshot ${i+1}" aria-current="${!i}"><img src="${img(p,i+1)}" alt=""></button>`).join('')}</div>`:''}`:''}
+  <div class="mg"><div><div class="blk"><h4>The problem</h4><p>${esc(p.p)}</p></div><div class="blk"><h4>Approach</h4>${li(p.a)}</div></div>
+  <div>${p.f?`<div class="blk"><h4>Findings</h4>${li(p.f)}</div>`:''}${p.rec?`<div class="blk"><h4>Recommendation</h4><p class="rc">${p.rec}</p></div>`:''}${p.note?`<div class="nt">${WARN}<span><b>Limitation.</b> ${p.note}</span></div>`:''}</div></div>
+  <p style="margin-top:26px"><a class="btn b1" href="${GH}${p.r}" target="_blank" rel="noopener">View on GitHub ${ARW}</a></p></div>`;
+  const go=i=>{if(!p.n||p.n<2)return;cur=(i-1+p.n)%p.n+1;$('#gi').src=img(p,cur);$('#gi').alt=`${p.t} screenshot ${cur}`;$$('.th button',d).forEach(x=>x.setAttribute('aria-current',x.dataset.i==cur))};
+  d.onclick=ev=>{if(ev.target==d||ev.target.closest('.x'))return d.close();const t=ev.target.closest('.th button');if(t)go(+t.dataset.i);if(ev.target.closest('.ar.p'))go(cur-1);if(ev.target.closest('.ar.n'))go(cur+1)};
+  d.onkeydown=ev=>{if(ev.key=='ArrowRight')go(cur+1);if(ev.key=='ArrowLeft')go(cur-1)};
+  d.showModal();d.scrollTop=0;
+}
+document.addEventListener('click',e=>{const b=e.target.closest('.c,.ft');if(b)openP(b.dataset.id)});
+
+/* tool usage chart, computed from P */
+const cnt={};P.forEach(p=>p.tools.forEach(t=>cnt[t]=(cnt[t]||0)+1));
+const rows=Object.entries(cnt).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+$('#ub').innerHTML=rows.map(([t,v])=>`<div class="ur"><span>${t}</span><div class="t"><i data-w="${v/P.length*100}"></i></div><b>${v}</b></div>`).join('');
+$('#un').textContent=`Out of ${P.length} projects. Bars fill to the share of projects that use each tool.`;
+
+/* certificates */
+$('#cg').innerHTML=C.map((c,i)=>`<div class="ce rv"><button data-i="${i}" aria-label="View certificate: ${c[0]}"><img src="${I}c/${c[3]}.webp" alt=""></button><div><span class="d">${c[2]}</span><h3>${c[0]}</h3><small>${c[1]}</small>${c[4]?`<a href="${c[4]}" target="_blank" rel="noopener">Verify credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>`:''}</div></div>`).join('');
+$('#cg').onclick=e=>{const b=e.target.closest('button');if(!b)return;const c=C[b.dataset.i],d=$('#lb');d.innerHTML=`<button class="x" aria-label="Close">×</button><div class="lbx"><img src="${I}c/${c[3]}.webp" alt="Certificate: ${c[0]}"></div>`;d.showModal();d.onclick=ev=>{if(ev.target==d||ev.target.closest('.x'))d.close()}};
+
+cards('all');
+
+/* reveal + nav highlight */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');$$('.ur i',x.target).forEach(i=>i.style.width=i.dataset.w+'%');io.unobserve(x.target)}}),{threshold:.12});
+$$('.rv').forEach(x=>io.observe(x));
+const nio=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)$$('nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$$('main section[id]').forEach(s=>nio.observe(s));
+</script>
+</body>
+</html>
